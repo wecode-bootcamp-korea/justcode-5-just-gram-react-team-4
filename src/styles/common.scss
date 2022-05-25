@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --white-color: #fff;
+  --blue-color: #0095F6;
+  --blue-light-color: #bbe0fc;
+  --grey-color: #8e8e8e
+  --grey-light-color: #c7c7c7;
+}
+
+ul {
+  list-style: none;
+}
+
+.user_id , .writer_id {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user_id , .writer_id:hover {
+  text-decoration: underline;
+}
+
+.user_img, .writer_img {
+  width: 25px;
+  height: 25px;
+  margin: 8px;
+  border-radius: 50%;
+}
+
+.logged_in_user_img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border-radius: 50%;
+}
+
+.header img {
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--white-color);
+  border: none;
+  font-weight: bold;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.bold_text {
+  font-weight: bold;
+}
+
+.posted_time {
+  font-size: 10px;
+  color: #8e8e8e;
+}
+
+.followers {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+input:focus {
+  outline: none;
+}
