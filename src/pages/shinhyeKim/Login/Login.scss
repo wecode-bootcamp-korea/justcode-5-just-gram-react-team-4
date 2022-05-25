@@ -1,0 +1,82 @@
+$border-color: #dbdbdb;
+$light-gray: #fafafa;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @include flex-center;
+  height: 100vh;
+  background-color: $light-gray;
+
+  .login_container {
+    margin: auto;
+    width: 350px;
+    background-color: #ffff;
+    border: 1px solid $border-color;
+
+    .logo_box {
+      @include flex-center;
+    }
+  }
+
+  .login_logo {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 15px;
+    font: lighter 50px "Lobster", cursive;
+  }
+}
+
+.input_box {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+
+  .login_input {
+    display: block;
+    margin: 4px 13px;
+    padding: 10px 15px;
+    background-color: $light-gray;
+    border: 0.5px solid $border-color;
+    border-radius: 3px;
+    &:focus {
+      outline: 0.3px solid black;
+    }
+    &::placeholder {
+      color: #9b9b9b;
+      font-size: 12px;
+    }
+  }
+
+  .login_button {
+    display: block;
+    width: 262px;
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+
+    &.active {
+      background-color: #0095f6;
+      cursor: pointer;
+    }
+    &.inactive {
+      background-color: #c4e0fb;
+    }
+  }
+}
+
+.extra_box {
+  @include flex-center;
+  margin: 50px auto;
+
+  .find_pw {
+    color: #04386a;
+    font-size: 12px;
+    text-decoration: none;
+  }
+}
