@@ -1,24 +1,29 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
 function Login() {
+  
   const navigate = useNavigate();
   const [id,setId] = useState("")
   const [pw,setPw] = useState("")
   const [disable, setDisable] = useState(true);
   const [opacity, setOpacity] = useState(0.5);
+  
+  useEffect(() => {
+    handleBtn()
+  },[id,pw]);
 
   const goToMain = () => {
     navigate("/main-sanghyeon");
   };
   
   function handleIdInput(e){
-    return setId(e.target.value);
+    setId(e.target.value);
   };
   const handlePwInput = (e) =>{
-    return setPw(e.target.value);
+    setPw(e.target.value);
   };
 
   const handleBtn = () => {
@@ -38,12 +43,12 @@ function Login() {
                     <input className="idBox" type="text" placeholder="전화번호, 사용자 이름 또는 이메일"
                     onChange={e=>{
                         handleIdInput(e);
-                        handleBtn();
+                        // handleBtn();
                     }}/>
                     <input className="passwordBox" type="password" placeholder="비밀번호" 
-                    onChange={ e=>{
+                    onChange={e=>{
                         handlePwInput(e);
-                        handleBtn();
+                        // handleBtn();
                     }}/>
                     <input type="button" disabled={disable} style={{opacity:opacity}} className="btnLogin" value="로그인" onClick={goToMain}/>
                     <p>또는</p>
