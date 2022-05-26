@@ -17,6 +17,16 @@ function Main() {
     const [commentArray, setCommentArray] = useState([
       { id: '' , text: comment },
     ]);
+    const [heartState,setHeartState] = useState(false);
+
+    const handleHeart = () => {
+        if (heartState==false){
+            setHeartState(true);
+        }
+        else {
+            setHeartState(false);
+        }
+    }
 
     const handleCommentInput = e => {
         setComment(e.target.value);
@@ -76,9 +86,11 @@ function Main() {
                             </div>
                             <img className="js" alt="js" src="/images/sanghyeon/js.png"/>
                             <div className="iconBox comment">
-                                <img className="heart" src="/images/sanghyeon/heart.png" alt="heart"/>
-                                <img alt="bubble" src="/images/sanghyeon/bubble.png"/>
-                                <img alt="upload" src="/images/sanghyeon/upload.png"/>
+                                {heartState ? <img className="heart" src="/images/sanghyeon/heart.png" alt="heart" onClick={handleHeart}/> :
+                                <img className="heart" src="/images/sanghyeon/binheart.png" alt="heart" onClick={handleHeart}/>
+                                }
+                                <img alt="bubble" src="/images/sanghyeon/bubble.png" className="bubble"/>
+                                <img alt="upload" src="/images/sanghyeon/upload.png"className="upload"/>
                             </div>
                             <div className="heartCnt comment">
                                 <img src="/images/sanghyeon/me.jpeg" alt="me"/>
