@@ -1,0 +1,144 @@
+* {
+  font-size: 11px;
+}
+.container {
+  border: 8px solid blue;
+  position: relative;
+}
+
+.header {
+  border: 5px solid green;
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.logo-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fa-brands fa-instagram {
+  margin-right: 5px;
+}
+
+.search {
+  border-radius: 2px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-image: url("");
+}
+
+.menu_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 20px;
+  width: 80px;
+}
+
+.content {
+  border: 5px solid purple;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+.feed_contents {
+  padding: 5px 10px 0 5px;
+}
+.feed-group {
+  border: 5px solid red;
+  flex-direction: column;
+}
+
+.feed_photo {
+  width: 400px;
+}
+
+.feed_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like_sentence {
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.comment_box span {
+  font-weight: bold;
+}
+
+.floating_section {
+  border: 5px solid yellow;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 200px;
+  padding: 0 20px;
+  padding-top: 20px;
+}
+
+.story-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommend-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.story-group {
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.story_box {
+  border: 1px solid green;
+}
+
+.recommend_box {
+  border: 1px solid brown;
+}
+
+.comment_group {
+  border: 1px solid pink;
+}
+
+.post_comment_group {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0 5px 0;
+}
+
+.post_comment_box {
+  display: flex;
+  justify-content: space-between;
+}
+.post_comment_type {
+  outline: none;
+  border: none;
+  flex: 1;
+}
+
+.company_info_box {
+  border: 1px solid green;
+  color: gray;
+}

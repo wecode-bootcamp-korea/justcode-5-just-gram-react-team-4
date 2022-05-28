@@ -1,0 +1,32 @@
+[
+    {
+      "id": hellowe,
+      "userName": "wecode",
+      "content": "Welcome to world best coding bootcamp!",
+      "isLiked": true
+    },
+    {
+      "id": greetings,
+      "userName": "joonsikyang",
+      "content": "강아지 너무 예뻐요",
+      "isLiked": false
+    },
+    {
+      "id": developer_good,
+      "userName": "jayPark",
+      "content": "Hey.",
+      "isLiked": true
+    },
+    {
+     "id": dangdang_love,
+     "userName": "joonsikyang",
+     "content": "안녕하세요!",
+     "isLiked": false
+    },
+     {
+        "id": aurevoir,
+        "userName": "joonsikyang",
+        "content": "tres mignon",
+        "isLiked": false
+      }
+  ]
