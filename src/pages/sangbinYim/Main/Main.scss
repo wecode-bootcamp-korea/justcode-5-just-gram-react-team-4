@@ -101,6 +101,8 @@ main{
 }
 .message{
     position: relative;
+    height: 85px;
+    overflow:auto;
 }
 .emoji_heart{
     width: 10px;
@@ -163,6 +165,9 @@ main{
     margin-bottom: 20px;
     }
 .story-div::-webkit-scrollbar{
+    display: none;
+}
+.message::-webkit-scrollbar{
     display: none;
 }
 .yumsimg{

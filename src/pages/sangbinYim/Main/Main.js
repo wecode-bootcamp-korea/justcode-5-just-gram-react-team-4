@@ -1,9 +1,11 @@
 import './Main.scss'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Comment from './Comment'
+import CommentList from './CommentList'
 
 function MainsangbinYim() {
  const [comment, setComment] = useState('')
+ 
  
  const inputComment = e => setComment(e.target.value)
  
@@ -14,20 +16,30 @@ function MainsangbinYim() {
      if(e.key === 'Enter'&& comment !== ' '){
          e.preventDefault();
          const repoArray = [...savedComments];
-         repoArray.push({id : 'Bin ' , comment : comment}); 
+         repoArray.push({ num:1, id : 'Bin ' , comment : comment}); 
          setSavedComments(repoArray);
          setComment(" ")       
      }
  }
  const click = () => {
-     if(comment==="")
+     if(comment === " ")
      {return alert("댓글을 입력해주세요")}
      else{
     const repoArray = [...savedComments];
-    repoArray.push({id : 'Sang ' , comment : comment}); 
+    repoArray.push({num:2, id : 'Sang ' , comment : comment}); 
     setSavedComments(repoArray);
     setComment(" ")
     }}
+
+const [commentList, setCommentList]= useState([]);
+
+useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json')
+    .then(res => res.json())
+    .then(data => { console.log(data); 
+        setCommentList(data);});
+},[])
+   
 return (
       <div className="Main">
         <nav>
@@ -69,7 +81,8 @@ return (
                         <span className="likeline_font">aineword님 외 10명이 좋아합니다.</span>
                     </div>
                     <div className="message">
-                        {savedComments.map(data=>(<Comment data={data}/>))}
+                    {commentList.map(commentList => <CommentList key={commentList.id} name={commentList.userName} comment={commentList.content}/>)}
+                    {savedComments.map(savedComments=>(<Comment key={savedComments.num} id={savedComments.id}comment={savedComments.comment}/>))}
                         <img className="emoji_heart" alt="heart" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/></div>
                     <div className="comment">
                         <input 
