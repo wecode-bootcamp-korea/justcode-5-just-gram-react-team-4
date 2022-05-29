@@ -5,7 +5,7 @@ import './Login.scss'
 function LoginsangbinYim() {
   const navigate = useNavigate();
   const goToMain =() => {
-    navigate("/Main");
+    navigate("/main-sangbin");
     };
   const [ id, setid ] = useState('')  
   const handleIdInput = event => {
@@ -42,7 +42,6 @@ function LoginsangbinYim() {
             </div>
             <div class="extra">비밀번호를 잊으셨나요?</div>
         </div>
-        <script src="js/login.js"></script>
       </div>
     );
   }
