@@ -73,8 +73,12 @@ main{
 }
 .profile_name{
     font-weight:bold;
-    position:absolute ;
-    top:10px
+    
+    
+}
+.profile_div{
+    display: flex;
+    align-items: center;
 }
 .feeds_img{
     width: 100%;
@@ -126,8 +130,9 @@ main{
 .comment{
     display: flex;
     justify-content:space-between;
-    border-top: 1px solid silver;
+    border: 1px solid silver;
     margin-top: 10px;
+    
 }
 .main-right{
     width: 300px;
@@ -203,4 +208,12 @@ main{
 .CMU {
     padding: 0;
     margin: 0;
+}
+
+.feeds {
+    height: 600px;
+    overflow:auto;
+}
+.feeds::-webkit-scrollbar{
+    display: none;
 }

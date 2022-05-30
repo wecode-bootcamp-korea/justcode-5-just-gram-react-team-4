@@ -8,7 +8,10 @@ function LoginsangbinYim() {
   const goToMain =() => {
     navigate("/main-sangbin");
     };
-  const [ inputValues, setInputValues ] = useState({ Id : '', Password : '' })  
+  const [ inputValues, setInputValues ] = useState({ 
+    Id : '', 
+    Password : '' 
+  })  
   
   const handleInput = event => {
     const {name ,value} = event.target; 
