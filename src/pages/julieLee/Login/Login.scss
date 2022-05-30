@@ -51,9 +51,19 @@ body {
   padding: 10px 0;
   border-radius: 5px;
   border: none;
-  background-color: #c4e1fb;
+  background-color: #0095f6;
   color: white;
   font-size: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+active {
+  opacity: 1;
+}
+
+inactive {
+  opacity: 0.5;
 }
 
 .extra-box {

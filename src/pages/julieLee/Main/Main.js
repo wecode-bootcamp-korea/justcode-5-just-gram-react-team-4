@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Main.scss";
 
 function MainJulie() {
@@ -42,7 +41,7 @@ function MainJulie() {
               <img
                 className="feed_photo"
                 alt="feed_image"
-                src="./public/bom.jpg"
+                src="/images/julieLee/bom.jpg"
               ></img>
             </div>
             <div className="feed_contents">
