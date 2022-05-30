@@ -16,7 +16,7 @@ function MainsangbinYim() {
      if(e.key === 'Enter'&& comment !== ' '){
          e.preventDefault();
          const repoArray = [...savedComments];
-         repoArray.push({ num:1, id : 'Bin ' , comment : comment}); 
+         repoArray.push({  id : 'Bin ' , comment : comment}); 
          setSavedComments(repoArray);
          setComment(" ")       
      }
@@ -26,7 +26,7 @@ function MainsangbinYim() {
      {return alert("댓글을 입력해주세요")}
      else{
     const repoArray = [...savedComments];
-    repoArray.push({num:2, id : 'Sang ' , comment : comment}); 
+    repoArray.push({ id : 'Sang ' , comment : comment}); 
     setSavedComments(repoArray);
     setComment(" ")
     }}
@@ -82,7 +82,7 @@ return (
                     </div>
                     <div className="message">
                     {commentList.map(commentList => <CommentList key={commentList.id} name={commentList.userName} comment={commentList.content}/>)}
-                    {savedComments.map(savedComments=>(<Comment key={savedComments.num} id={savedComments.id}comment={savedComments.comment}/>))}
+                    {savedComments.map(savedComments=>(<Comment key={savedComments.index} id={savedComments.id}comment={savedComments.comment}/>))}
                         <img className="emoji_heart" alt="heart" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/></div>
                     <div className="comment">
                         <input 

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.scss'
@@ -7,40 +8,42 @@ function LoginsangbinYim() {
   const goToMain =() => {
     navigate("/main-sangbin");
     };
-  const [ id, setid ] = useState('')  
-  const handleIdInput = event => {
-    setid(event.target.value);
+  const [ inputValues, setInputValues ] = useState({ Id : '', Password : '' })  
+  
+  const handleInput = event => {
+    const {name ,value} = event.target; 
+    setInputValues({...inputValues, [name] : value,});
+    console.log({ [name] : value,})
     }
-  const [ pw, setpw ] = useState('')
-  const handlePwInput = event => {
-    setpw(event.target.value);
-  }
- const validation = id.includes('@') && pw.length >=5 
+  
+ const validation = inputValues.Id.includes('@') && inputValues.Password.length >=5 
   
     return (
       <div className="Login">
-        <div class="container">
-            <h1 class="logo">justgram</h1> 
-            <div class="Id-box">
+        <div className="container">
+            <h1 className="logo">justgram</h1> 
+            <div className="Id-box">
                 <input 
-                class="IdInput" 
+                className="IdInput" 
                 type="text" 
+                name="Id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={handleIdInput}
+                onChange={handleInput}
                 />
             </div>
-            <div class="Pass-box">    
+            <div className="Pass-box">    
                 <input 
-                  class="PassInput" 
+                  className="PassInput" 
                   type= "password" 
+                  name="Password"
                   placeholder="비밀번호"
-                  onChange={handlePwInput}
+                  onChange={handleInput}
                 />
             </div>
-            <div class="bt">
+            <div className="bt">
             <button className={validation? 'active': 'inactive'} onClick={goToMain} disabled ={validation ? false : true }>로그인</button>
             </div>
-            <div class="extra">비밀번호를 잊으셨나요?</div>
+            <div className="extra">비밀번호를 잊으셨나요?</div>
         </div>
       </div>
     );
