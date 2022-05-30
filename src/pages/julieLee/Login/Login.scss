@@ -1,0 +1,80 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 400px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.logo-text {
+  display: flex;
+  font-family: "Lobster", cursive;
+  font-size: 35px;
+  padding: 50px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+}
+.input-common {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background-color: #fafafa;
+}
+
+.identify {
+  display: block;
+}
+
+.password {
+  display: block;
+}
+
+.login-button {
+  display: block;
+  margin: 5px 0;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: #0095f6;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+active {
+  opacity: 1;
+}
+
+inactive {
+  opacity: 0.5;
+}
+
+.extra-box {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.find-password {
+  font-family: cursive;
+  font-size: 12px;
+  text-decoration: none;
+}
