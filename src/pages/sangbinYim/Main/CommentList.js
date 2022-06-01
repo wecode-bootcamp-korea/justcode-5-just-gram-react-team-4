@@ -4,8 +4,9 @@ function CommentList({name , comment }){
 
     return (
         <ul className= 'CMU'>
-        <span className="CM">{name}</span> <span>{comment}</span>
+        <span className="CM">{name}</span><span>{comment}</span>
         </ul>
+
 
     )
 }

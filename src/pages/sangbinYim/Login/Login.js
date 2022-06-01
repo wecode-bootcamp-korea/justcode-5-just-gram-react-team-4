@@ -6,6 +6,18 @@ import './Login.scss'
 function LoginsangbinYim() {
   const navigate = useNavigate();
   const goToMain =() => {
+    /*fetch("http://52.79.143.176:8000/users/signup", {
+      method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+      body: JSON.stringify({
+        email: inputValues,
+        password: inputValues,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과: ", result))*/;
     navigate("/main-sangbin");
     };
   const [ inputValues, setInputValues ] = useState({ 
@@ -16,7 +28,6 @@ function LoginsangbinYim() {
   const handleInput = event => {
     const {name ,value} = event.target; 
     setInputValues({...inputValues, [name] : value,});
-    console.log({ [name] : value,})
     }
   
  const validation = inputValues.Id.includes('@') && inputValues.Password.length >=5 

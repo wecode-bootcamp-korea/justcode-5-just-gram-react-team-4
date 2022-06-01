@@ -5,29 +5,26 @@ import {useState, useEffect} from 'react'
 
 
 function Feed(props) {
-    const [comment, setComment] = useState('')
- 
- 
+    const [comment, setComment] = useState(' ')
     const inputComment = e => setComment(e.target.value)
-    
-    const [savedComments,setSavedComments] = useState([{ id : ' ' , comment : comment}])
-    
+    const [savedComments,setSavedComments] = useState([])
     const submit = e => {
         e.preventDefault();
+        
         if(e.key === 'Enter'&& comment !== ' '){
             e.preventDefault();
             const repoArray = [...savedComments];
-            repoArray.push({  id : 'Bin ' , comment : comment}); 
+            repoArray.push({ id : 'Bin ' , comment : comment}); 
             setSavedComments(repoArray);
             setComment(" ")       
         }
     }
     const click = () => {
-        if(comment === " ")
+        if(comment ===' ')
         {return alert("댓글을 입력해주세요")}
         else{
        const repoArray = [...savedComments];
-       repoArray.push({ id : 'Sang ' , comment : comment}); 
+       repoArray.push({ id : 'Bin ' , comment : comment}); 
        setSavedComments(repoArray);
        setComment(" ")
        }}
@@ -41,6 +38,14 @@ function Feed(props) {
            setCommentList(data);});
    },[])
    
+   const [like, setLike] = useState(props.Like)
+   const handleLike = () => {
+       if(like === false){return setLike(true) }
+       else {return setLike(false)}
+   }
+const deleteComment = (deleteidx) => {
+    setSavedComments(savedComments.filter((_,index) => index !== deleteidx ));
+    }
 
     return(
 <article className = "article">
@@ -53,7 +58,8 @@ function Feed(props) {
                         <img className="feeds_img"alt="feed" src={props.feedImg}/> 
                     </div>
                     <div className="emoji_line">
-                        <img className="emoji"alt="emoji" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/>
+                    {like ? <img className="emoji"alt="emoji" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/800px-Coraz%C3%B3n.svg.png" onClick={handleLike}/> :
+                    <img className="emoji"alt="emoji" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" onClick={handleLike}/>}    
                         <img className="emoji"alt="emoji" src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/speech_bubble-256.png"/>
                         <img className="emoji"alt="emoji" src="https://cdn2.iconfinder.com/data/icons/line-drawn-social-media/30/send-128.png"/>
                         <img className="save"alt="emoji" src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/bookmark_ribbon_save_web_label-128.png"/>
@@ -64,7 +70,7 @@ function Feed(props) {
                     </div>
                     <div className="message">
                     {commentList.map(commentList => <CommentList key={commentList.id} name={commentList.userName} comment={commentList.content}/>)}
-                    {savedComments.map(savedComments=>(<Comment key={savedComments.id} id={savedComments.id}comment={savedComments.comment}/>))}
+                    {savedComments.map((savedComments,index)=><Comment key={index} num={index} id={savedComments.id} comment={savedComments.comment} deleteComment={deleteComment}/>)}
                     </div>   
                     <div className="comment">
                         <input 

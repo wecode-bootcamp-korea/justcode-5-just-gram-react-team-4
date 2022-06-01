@@ -208,6 +208,7 @@ main{
 .CMU {
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 .feeds {
@@ -216,4 +217,12 @@ main{
 }
 .feeds::-webkit-scrollbar{
     display: none;
+}
+.delete {
+    position: absolute; 
+    right: 0;
+    border: none;
+    color: gray;
+    cursor: pointer;
+    background-color: white;
 }

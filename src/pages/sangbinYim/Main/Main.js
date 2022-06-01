@@ -38,7 +38,7 @@ return (
             {feeds.map((feeds)=>
             <Feed key={feeds.id} writer={feeds.writer.name}
                   profileImg={feeds.writer.profileImg} likedUsername={feeds.likedUser.name} 
-                  likedUserImg={feeds.likedUser.profileImg} feedImg={feeds.feedImg} />)}      
+                  likedUserImg={feeds.likedUser.profileImg} feedImg={feeds.feedImg} Like={feeds.Like} /> )}      
             </div>
             <div className="main-right">
                 <div className="wecodeIdDiv">
