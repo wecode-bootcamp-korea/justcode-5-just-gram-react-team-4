@@ -1,0 +1,72 @@
+[
+    { 
+        "id": 1,
+        "identify": "hyeju",
+        "location": "라포하임키즈풀빌라",
+        "authorImg": "/images/sungheeKim/logan1.JPG",
+        "mainImg":"/images/sungheeKim/apple.jpg"
+    },
+    {
+        "id": 2,
+        "identify": "cj_pic_",
+        "location": "전라남도 여수",
+        "authorImg": "/images/sungheeKim/logan2.JPG",
+        "mainImg":"/images/sungheeKim/banana.jpg"
+    },
+    {
+        "id": 3,
+        "identify": "mom_stargram",
+        "location": "신도림역",
+        "authorImg": "/images/sungheeKim/logan.jpg",
+        "mainImg":"/images/sungheeKim/book.jpg"
+    },
+    {
+        "id": 4,
+        "identify": "detailance",
+        "location": "별다섯오셰프",
+        "authorImg": "/images/sungheeKim/familyPic.jpg",
+        "mainImg":"/images/sungheeKim/candy.jpg"
+    },
+    {
+        "id": 5,
+        "identify": "artistic",
+        "location": "제주도 푸릉",
+        "authorImg": "/images/sungheeKim/roy.jpg",
+        "mainImg":"/images/sungheeKim/father.jpg"
+    },
+    {
+        "id": 6,
+        "identify": "zzgoro",
+        "location": "서울",
+        "authorImg": "/images/sungheeKim/roy1.JPG",
+        "mainImg":"/images/sungheeKim/sea.jpg"
+    },
+    {
+        "id": 7,
+        "identify": "chanmi",
+        "location": "스타벅스 강남",
+        "authorImg": "/images/sungheeKim/roy2.JPG",
+        "mainImg":"/images/sungheeKim/mother.jpg"
+    },
+    {
+        "id": 8,
+        "identify": "wikitree",
+        "location": "에버랜드",
+        "authorImg": "/images/sungheeKim/marie.jpg",
+        "mainImg":"/images/sungheeKim/sister.jpg"
+    },
+    {
+        "id": 9,
+        "identify": "insight.co.kr",
+        "location": "강원도 정선",
+        "authorImg": "/images/sungheeKim/noel.jpg",
+        "mainImg":"/images/sungheeKim/victory.jpg"
+    },
+    {
+        "id": 10,
+        "identify": "mailove",
+        "location": "하와이",
+        "authorImg": "/images/sungheeKim/kim.jpg",
+        "mainImg":"/images/sungheeKim/familyPic.jpg"
+    }
+]

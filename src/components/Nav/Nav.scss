@@ -1,0 +1,49 @@
+nav{
+    display: flex;
+    border-bottom:1px solid rgb(191, 190, 189);
+    padding:10px 20px;
+    
+}
+nav{
+    img{
+        width: 20px;
+        height: 20px;
+        padding:5px;
+    
+    }
+} 
+.newHeart{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.main-logo{
+    border-right:1px solid black;
+    padding-right: 15px;
+    margin-left:70px;
+    margin-top: 5px;
+    
+}
+.main-text{
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    padding-left:15px;
+    margin-top: 5px;
+    
+}
+nav {
+    input{
+        margin-left:150px;
+        margin-right:150px;
+        width:150px;
+        text-align: center;
+        background-image: url("../../images/search.png");
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+        background-color: #eee;
+        background-position: 65px;
+        padding:5px 25px;
+        font-size: 13px;
+        border: 1px solid lightgray;
+        margin-top: 5px;
+    }
+}

@@ -1,29 +1,15 @@
+import React from "react";
 import { useState } from "react";
 import "./Main.scss";
+import "../../../styles/common.scss";
+import Nav from "../../../components/Nav/Nav";
+import FeedList from "../../../components/Feeds/FeedList";
+import CommentList from "../../../components/Comments/commentList"
 
-function Comment({comment}){
-    return (<div className="comment">
-    <div>
-        <span className="commentSpace"><b>{comment.id}</b></span>
-        <span>{comment.comment}</span>
-    </div>
-<img className="likeIt"src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/>
-</div>)
-}
 
 
 function Main() {
 
-  const [comments,setComments]=useState([
-      {
-          id:'noelle',
-          comment:'I love mommy'
-      },
-      {
-        id:'roykim',
-        comment:'I love daddy' 
-      }
-  ]);
 
   const [commentInputValue,setCommentInputValue]=useState('');
   const [addCommentButtonDisabled,setAddCommentButtonDisabled]=useState(true);
@@ -48,43 +34,19 @@ function Main() {
         comment:commentInputValue
         
     }
-    setComments([...comments,commentToAdd]);
+    //setComments([...comments,commentToAdd]);
     setAddCommentButtonDisabled(true);
     setCommentInputValue('');
   }
   
 
     return (
-      <div className="container">
-            <nav>
-                <img className="main-logo" src="/images/sungheekim/instagram.png" alt="main-logo"/>
-                <span className="main-text">Justgram</span>
-                <div className="search-box">
-                    <input className="search-box"type="text" placeholder="검색"/>
-                </div>
-                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"/>
-                <img className="newHeart"src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/>
-                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"/>
-            </nav>
-            <main>
-                <div className="feed-box">
-                    <div className="article-header">
-                        <img className="author-img" src="/images/sungheekim/justcode.png"/>
-                        <div className="id-location">
-                            <span className="identify">wecode_bootcamp</span>
-                            <span className="location">weCode-위코드</span>
-                        </div>
-                        <img className="moreOption" src="/images/sungheekim/option.png"/>
-                    </div>
+      <div className="mainContainer">
+        <Nav />
+        <FeedList />    
                     
-                    <img className="new-photo" src="/images/sungheekim/familyPic.jpg" alt="new-photo"/>
                     
-                    <div className="feed-icon">
-                        <img id="red-heart"src="/images/sungheekim/heart.png" alt="red-heart"/>
-                        <img id="chat-icon" src="/images/sungheekim/chat.png"/>
-                        <img src="/images/sungheekim/upload.png" alt="share"/>
-                        <img className="save-icon" src="/images/sungheekim/save-instagram.png" alt="save"/>
-                    </div>
+                    
                     
                     <div className="feeds-footer">
                             <div className="howManyLikes">
@@ -92,20 +54,14 @@ function Main() {
                                 <span><b>aineworld</b>님 <b>외 10명</b>이 좋아합니다</span>
                             </div>
                             <span id="description"><b>canon_mj</b> 위워크에서 진행한 베이킹 클래스...<span style={{color: "rgb(200, 203, 206)"}}>더 보기</span></span>
-                            <div className="comments">
-                            {
-                                    comments.map((comment, index) =>{
-                                        return <Comment comment={comment} key={index}/>
-                                    })
-                                }
-                             </div>
+                            <CommentList/>
                             <span className="minutes" style={{color: "rgb(147, 150, 153)"}}>42분전</span> 
                             <div className="addingCommentList">
                                 <input id="addComment" value={commentInputValue} onChange={handleCommentInput} onKeyDown={handleCommentInputKeyDown} className="addComment" type="text"placeholder="댓글 달기..."/>
                                 <button disabled={addCommentButtonDisabled} onClick={handleCommentButtonClick} className="upload-btn">게시</button>
                             </div>
                        </div>
-                </div>
+                
 
                 <div className="main-right">
                     <div className="profile-box">
@@ -188,7 +144,7 @@ function Main() {
                 
                 </div>
 
-            </main>
+            
             
         </div>
     );
