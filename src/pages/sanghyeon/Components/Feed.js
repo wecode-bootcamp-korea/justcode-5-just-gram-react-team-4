@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Comment from "./Comment";
 import CommentList from "./CommentList";
+import "./Feed.scss";
 
 function Feed({ dataF }) {
   const [comment, setComment] = useState("");
-  const [commentArray, setCommentArray] = useState([
-    { userName: "", content: comment },
-  ]);
+  const [commentArray, setCommentArray] = useState([{}]);
   const [heartState, setHeartState] = useState(false);
 
   const handleHeart = () => {
@@ -24,7 +23,11 @@ function Feed({ dataF }) {
     if (e.key === "Enter" && e.target.value !== "") {
       e.preventDefault();
       const curArray = [...commentArray];
-      curArray.push({ userName: "BLIND", content: comment });
+      curArray.push({
+        id: commentArray[commentArray.length - 1].id + 1,
+        userName: "BLIND",
+        content: comment,
+      });
       setCommentArray(curArray);
       setComment("");
     }
@@ -34,7 +37,11 @@ function Feed({ dataF }) {
       alert("최소 1글자 이상 입력해주세요!");
     } else {
       const curArray = [...commentArray];
-      curArray.push({ userName: "BLIND", content: comment });
+      curArray.push({
+        id: commentArray[commentArray.length - 1].id + 1,
+        userName: "BLIND",
+        content: comment,
+      });
       setCommentArray(curArray);
       setComment("");
     }
@@ -49,7 +56,7 @@ function Feed({ dataF }) {
           src="/images/sanghyeon/justcode.png"
         />
         <div>
-          <p>{dataF.userName}</p>
+          <p className="nameInFeed">{dataF.userName}</p>
           <p>{dataF.userSubName}</p>
         </div>
       </div>
@@ -83,12 +90,13 @@ function Feed({ dataF }) {
       </div>
       <div className="heartCnt comment">
         <img src="/images/sanghyeon/me.jpeg" alt="me" />
-        <span>{dataF.whoHeart[0]}</span> 님 외 <span>{dataF.heartCnt}</span>
+        <span className="nameInFeed">{dataF.whoHeart[0]}</span>님 외
+        <span>{dataF.heartCnt} </span>
         명이 좋아합니다.
       </div>
       <div className="contentsBox comment">
         <p>
-          <span>{dataF.userName} </span>
+          <span className="nameInFeed">{dataF.userName} </span>
           {dataF.content}
         </p>
         <p>10분전</p>
@@ -111,10 +119,10 @@ function Feed({ dataF }) {
           onClick={handleSubmitBtn}
         />
         <div className="comments">
-          <CommentList />
-          {commentArray.map((data) => (
-            <Comment data={data} />
-          ))}
+          <CommentList
+            commentArray={commentArray}
+            setCommentArray={setCommentArray}
+          />
         </div>
       </div>
     </article>
