@@ -1,0 +1,32 @@
+.feed-header{
+    display: flex;
+    flex-direction: row;
+    border:1px solid rgb(191, 190, 189);
+    background-color: white;
+}
+.id-location{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    flex:1;
+}
+
+.author-img{
+    width:25px;
+    height: 25px;
+    border-radius: 50%;
+    padding:10px;
+}
+.feed-header .identify{
+    font-size: 15px;
+}
+
+.feed-header .location{
+    font-size: 12px;
+}
+
+.moreOption{
+    width:15px;
+    height:15px;
+    margin: 10px;
+}
