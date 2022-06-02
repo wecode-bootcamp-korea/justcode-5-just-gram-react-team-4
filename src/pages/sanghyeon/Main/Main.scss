@@ -8,48 +8,6 @@ body {
     list-style: none;
   }
 
-  .navWrapper {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #ffffff;
-    margin-top: 0px;
-
-    nav {
-      width: 800px;
-      display: flex;
-      flex-direction: row;
-      font-size: 30px;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #ffffff;
-
-      img {
-        width: 30px;
-      }
-      input {
-        background-color: #fafafa;
-        border: 1px solid #d0d0d0;
-        padding: 5px 0px;
-        border-radius: 4px;
-      }
-      input::placeholder {
-        background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
-        background-size: contain;
-        background-position: 30% center;
-        background-repeat: no-repeat;
-        text-align: center;
-        text-indent: 0;
-      }
-      .navBar {
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
   .wrapper {
     margin-top: 80px;
     width: 800px;
@@ -58,11 +16,6 @@ body {
       display: flex;
       flex-direction: row;
 
-      .title {
-        font-family: "Lobster", cursive;
-        display: flex;
-        align-items: center;
-      }
       .feeds {
         width: 60%;
       }
