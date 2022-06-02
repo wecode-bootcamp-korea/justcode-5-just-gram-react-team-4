@@ -12,43 +12,6 @@ function Main() {
     navigate("/login-sanghyeon");
   };
 
-  const [comment, setComment] = useState("");
-  const [commentArray, setCommentArray] = useState([
-    { userName: "", content: comment },
-  ]);
-  const [heartState, setHeartState] = useState(false);
-
-  const handleHeart = () => {
-    if (heartState === false) {
-      setHeartState(true);
-    } else {
-      setHeartState(false);
-    }
-  };
-
-  const handleCommentInput = (e) => {
-    setComment(e.target.value);
-  };
-  const handleEnter = (e) => {
-    if (e.key === "Enter" && e.target.value !== "") {
-      e.preventDefault();
-      const curArray = [...commentArray];
-      curArray.push({ userName: "BLIND", content: comment });
-      setCommentArray(curArray);
-      setComment("");
-    }
-  };
-  const handleSubmitBtn = () => {
-    if (comment === "") {
-      alert("최소 1글자 이상 입력해주세요!");
-    } else {
-      const curArray = [...commentArray];
-      curArray.push({ userName: "BLIND", content: comment });
-      setCommentArray(curArray);
-      setComment("");
-    }
-  };
-
   const exploreUrl =
     "https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png";
   const heartUrl =
@@ -76,84 +39,7 @@ function Main() {
       <div className="wrapper">
         <main>
           <div className="feeds">
-            <article>
-              <div className="articleHeader">
-                <img
-                  className="justcode"
-                  alt="justcode"
-                  src="/images/sanghyeon/justcode.png"
-                />
-                <div>
-                  <p>justcode_bootcamp</p>
-                  <p>justCode - 저스트코드</p>
-                </div>
-              </div>
-              <img className="js" alt="js" src="/images/sanghyeon/js.png" />
-              <div className="iconBox comment">
-                {heartState ? (
-                  <img
-                    className="heart"
-                    src="/images/sanghyeon/heart.png"
-                    alt="heart"
-                    onClick={handleHeart}
-                  />
-                ) : (
-                  <img
-                    className="heart"
-                    src="/images/sanghyeon/binheart.png"
-                    alt="heart"
-                    onClick={handleHeart}
-                  />
-                )}
-                <img
-                  alt="bubble"
-                  src="/images/sanghyeon/bubble.png"
-                  className="bubble"
-                />
-                <img
-                  alt="upload"
-                  src="/images/sanghyeon/upload.png"
-                  className="upload"
-                />
-              </div>
-              <div className="heartCnt comment">
-                <img src="/images/sanghyeon/me.jpeg" alt="me" />
-                sanghyeon111님 외 30명이 좋아합니다.
-              </div>
-              <div className="contentsBox comment">
-                <p>
-                  <span>justcode_bootcamp</span>"2022년, 개발자가 되기로
-                  결심했다면 1,300명 이상 비전공자 개발자를 배출한 저스트코드와
-                  함께...
-                </p>
-                <p>10분전</p>
-                <input
-                  className="tInput"
-                  type="text"
-                  placeholder="댓글달기..."
-                  onChange={(e) => {
-                    handleCommentInput(e);
-                  }}
-                  onKeyUp={(e) => {
-                    handleEnter(e);
-                  }}
-                  value={comment}
-                />
-                <input
-                  className="submitBtn"
-                  type="button"
-                  value="게시"
-                  onClick={handleSubmitBtn}
-                />
-                <div className="comments">
-                  <CommentList />
-                  {commentArray.map((data) => (
-                    <Comment data={data} />
-                  ))}
-                </div>
-              </div>
-            </article>
-            {/* <FeedList /> */}
+            <FeedList />
           </div>
           <div className="main-right">
             <div className="innerRight">

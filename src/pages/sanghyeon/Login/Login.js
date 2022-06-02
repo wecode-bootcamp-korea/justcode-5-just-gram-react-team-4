@@ -28,6 +28,30 @@ function Login() {
     id.includes("@") && pw.length >= 5 ? setOpacity(1) : setOpacity(0.5);
     id.includes("@") && pw.length >= 5 ? setDisable(false) : setDisable(true);
   };
+  const signUP = () => {
+    fetch("http://52.79.143.176:8000/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.message === "client input invalid") {
+          alert(
+            " 아이디 또는 비밀번호를 잘못 입력했습니다. \n 입력하신 내용을 다시 확인해주세요. "
+          );
+        } else {
+          goToMain();
+        }
+        console.log("결과: ", result);
+      });
+    console.log(pw);
+  };
 
   return (
     <body>
@@ -44,7 +68,6 @@ function Login() {
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={(e) => {
                 handleIdInput(e);
-                // handleBtn();
               }}
             />
             <input
@@ -53,7 +76,6 @@ function Login() {
               placeholder="비밀번호"
               onChange={(e) => {
                 handlePwInput(e);
-                // handleBtn();
               }}
             />
             <input
@@ -62,7 +84,7 @@ function Login() {
               style={{ opacity: opacity }}
               className="btnLogin"
               value="로그인"
-              onClick={goToMain}
+              onClick={signUP}
             />
             <p>또는</p>
             <p className="facebook">Facebook으로 로그인</p>
