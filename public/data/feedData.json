@@ -1,0 +1,37 @@
+[
+    {
+        "id" : 1,
+        "writer" : {
+            "name" : "canon_mj",
+            "profileImg" : "https://images.unsplash.com/photo-1652981989753-80fa3d31202f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
+        },
+        "likedUser" :  {
+            "name" : "aineworld",
+            "profileImg" : "https://images.unsplash.com/photo-1653031419232-c3c7c7eba0cd?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=400"
+            
+        },
+        "contents" : "위워크에서 진행한 베이킹 클래스 입니다." ,
+        "feedImg" : "https://images.unsplash.com/photo-1652841821713-744dffbdef38?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720 ",
+        "Like" : false
+        
+    },
+    {
+        "id" : 2,
+        "writer" : {
+            "name" : "sangbinyim",
+            "profileImg" : "https://www.ui4u.go.kr/depart/img/content/sub03/img_con03030100_01.jpg"
+        },
+        "likedUser" :  {
+            "name" : "bc9800",
+            "profileImg" : "https://images.unsplash.com/photo-1653031419232-c3c7c7eba0cd?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=400"
+            
+        },
+        "contents" : "위워크에서 진행한 베이킹 클래스 입니다." ,
+        "feedImg" : "https://mblogthumb-phinf.pstatic.net/20120420_141/wpa12_1334893227134psCrD_JPEG/20120420_121453.jpg?type=w2",
+        "Like" : true
+    
+
+    }   
+
+]
+        
